@@ -1,7 +1,7 @@
 "use client"
 import Link from 'next/link'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { styles } from '../app/styles'
 import { navLinks } from '@/constants'
@@ -17,7 +17,8 @@ const Navbar = () => {
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto '>
         <Link href='/' className='flex items-center gap-2'>
           <Image className='w-9 h-9 object-contain' src={logo} alt='logo' />
-          <p className='flex text-white text-[18px] font-bold cursor-pointer' >Vinicio &nbsp; <span className='sm:block hidden' >| Dev</span></p>
+          <p className='flex text-white text-[18px] font-bold cursor-pointer' > | Dev
+          </p>
         </Link>
         <ul className='justify-end list-none hidden sm:flex flex-grow gap-10'>
           {navLinks.map((link) => (
