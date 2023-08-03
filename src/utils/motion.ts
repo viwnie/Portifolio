@@ -1,4 +1,4 @@
-export const textVariant = (delay:string) => {
+export const textVariant = (delay?:number) => {
     return {
         hidden: {
             y: -50,
@@ -16,7 +16,7 @@ export const textVariant = (delay:string) => {
     };
 };
 
-export const fadeIn = (direction:string, type:string, delay:string, duration:string) => {
+export const fadeIn = (direction:string, type:string, delay:number, duration:number) => {
     return {
         hidden: {
             x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -80,8 +80,8 @@ export const staggerContainer = (staggerChildren:string, delayChildren:string) =
         hidden: {},
         show: {
             transition: {
-                staggerChildren: staggerChildren,
-                delayChildren: delayChildren || 0,
+                staggerChildren: parseFloat(staggerChildren),
+                delayChildren: parseFloat(delayChildren) || 0,
             },
         },
     };

@@ -1,7 +1,7 @@
 import {
-    mobile,
-    backend,
-    creator,
+    seo,
+    database,
+    nextjs,
     web,
     javascript,
     typescript,
@@ -25,7 +25,54 @@ import {
     threejs,
 } from "../assets";
 
-export const navLinks = [
+import { StaticImageData } from "next/image";
+
+interface NavLink {
+    id: string;
+    title: string;
+}
+
+interface Service {
+    title: string;
+    icon: StaticImageData;
+}
+
+interface Technology {
+    name: string;
+    icon: StaticImageData;
+}
+
+interface Experience {
+    title: string;
+    company_name: string;
+    icon: StaticImageData;
+    iconBg: string;
+    date: string;
+    points: string[];
+}
+
+interface Testimonial {
+    testimonial: string;
+    name: string;
+    designation: string;
+    company: string;
+    image: string;
+}
+
+interface ProjectTag {
+    name: string;
+    color: string;
+}
+
+interface Project {
+    name: string;
+    description: string;
+    tags: ProjectTag[];
+    image: StaticImageData;
+    source_code_link: string;
+}
+
+export const navLinks: NavLink[] = [
     {
         id: "about",
         title: "About",
@@ -40,26 +87,29 @@ export const navLinks = [
     },
 ];
 
-const services = [
+const services: Service[] = [
     {
-        title: "Web Developer",
+        title: "FullStack Developer",
         icon: web,
     },
     {
-        title: "React Native Developer",
-        icon: mobile,
+        title: "SEO Optimizado",
+        icon: seo,
     },
     {
-        title: "Backend Developer",
-        icon: backend,
+        title: "Bancos de Dados",
+        icon: database,
+        //icon: database,
     },
     {
-        title: "Content Creator",
-        icon: creator,
+        title: "NextJS Developer",
+        icon: nextjs,
+        //icon: performance
     },
+    
 ];
 
-const technologies = [
+const technologies: Technology[] = [
     {
         name: "HTML 5",
         icon: html,
@@ -114,7 +164,7 @@ const technologies = [
     },
 ];
 
-const experiences = [
+const experiences: Experience[] = [
     {
         title: "React.js Developer",
         company_name: "Starbucks",
@@ -169,7 +219,7 @@ const experiences = [
     },
 ];
 
-const testimonials = [
+const testimonials: Testimonial[] = [
     {
         testimonial:
             "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
@@ -196,7 +246,7 @@ const testimonials = [
     },
 ];
 
-const projects = [
+const projects: Project[] = [
     {
         name: "Car Rent",
         description:
